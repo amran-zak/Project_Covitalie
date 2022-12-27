@@ -1,0 +1,47 @@
+body{
+   	background:#222b35;
+    color: #cbfaf0;
+    }
+a{
+    color:#cbfaf0;
+    text-decoration:none;
+    font-weight: bold;
+}
+#b{
+	background:#222b35;
+    padding:50px 50px;
+    margin-top:50px;
+    margin-right: 50px;
+    margin-bottom:50px;
+    margin-left:50px;
+}
+#f{
+    background-color:#cbfaf0;
+}
+.activeo {
+    background: midnightblue;
+}
+
+.pres{
+    margin-right: 500px;
+    margin-left : 500px;
+    text-align: justify;
+
+}
+
+#main-wrap {
+    overflow: hidden;
+    padding :2px 5px;
+}
+
+#gauche {
+    float: left;
+    width: 50%;
+}
+#droite {
+    float: right;
+    width: 50%;
+}    
+
+   
+

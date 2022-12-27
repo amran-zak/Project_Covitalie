@@ -1,0 +1,274 @@
+<!-- page des graphiques de focus -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <h2> Effet du covid </h2>
+        <p class="pres">
+            {{description_page_focus}}
+        </p>
+        <p>Sommaire :</p>
+        <ul style="list-style:none; margin-left:0; padding-left:0;">
+            <li><a href="#graph4">{{titre_evol_mens}}</a></li>
+            <li><a href="#graph5">{{titre_comparaison}}</a></li>
+            <li><a href="#graph6">{{titre_comparaison_annee_rome}}</a></li>
+            <li><a href="#graph7">{{titre_comparaison_annee_venise}}</a></li>
+        </ul>
+    </div>
+    {% endblock %}
+    	
+    {% block graph %}
+    <div class="container h-100" id="f" >
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center box ">
+              
+                
+                
+                <div id="b">
+                    <h1  class="font-weight-light col"  id="graph4">{{titre_evol_mens}}</h1>
+                    <p class="font-weight-light col">{{description_evol_mens}}</p>
+                        <div id="accordion">
+                        
+                        
+                          <div class="card">
+                            <div class="card-header" id="headingOne">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  2017
+                                </button>
+                              </h5>
+                            </div>
+                            
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="background-color: #222b35">
+                              <div class="card-body">
+                              
+                                   
+                                   
+                                   <div id="main-wrap">
+                                        <div id="gauche">
+                                           <div><div id='fgs2017' class='chart'”></div></div>
+                                        </div>
+                                        <div id="droite">
+                                               <div id="content1"><div id='fgmr2017' class='chart'”></div></div>
+                                               <div id="content2"><div id='fgmv2017' class='chart'”></div></div>
+                                         </div>
+                                    </div>
+                                    
+                                   
+                                   
+                                        
+                                </div>
+                            </div>
+                        </div>
+                
+                
+                
+                
+                
+            
+                          <div class="card">
+                            <div class="card-header" id="headingTwo">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  2018
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion" style="background-color: #222b35">
+                              <div class="card-body">
+                              
+                                  <div id="main-wrap">
+                                       <div id="gauche">
+                                           <div><div id='fgs2018' class='chart'”></div></div>
+                                        </div>
+                                        <div id="droite">
+                                               <div id="content1"><div id='fgmr2018' class='chart'”></div></div>
+                                               <div id="content2"><div id='fgmv2018' class='chart'”></div></div>
+                                         </div>
+                                    </div>
+                                    
+                              </div>
+                            </div>
+                          </div>
+            
+                          <div class="card">
+                            <div class="card-header" id="headingThree">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  2019
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion" style="background-color: #222b35">
+                              <div class="card-body">
+                              
+                                  <div id="main-wrap">
+                                      <div id="gauche">
+                                           <div><div id='fgs2019' class='chart'”></div></div>
+                                        </div>
+                                        <div id="droite">
+                                               <div id="content1"><div id='fgmr2019' class='chart'”></div></div>
+                                               <div id="content2"><div id='fgmv2019' class='chart'”></div></div>
+                                         </div>
+                                    </div>
+                                    
+                                    
+                                    
+                              </div>
+                            </div>
+                          </div>
+            
+                          <div class="card">
+                            <div class="card-header" id="headingFour">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                  2020
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion" style="background-color: #222b35">
+                              <div class="card-body">
+                              
+                                  <div id="main-wrap">
+                                      <div id="gauche">
+                                           <div><div id='fgs2020' class='chart'”></div></div>
+                                        </div>
+                                        <div id="droite">
+                                               <div id="content1"><div id='fgmr2020' class='chart'”></div></div>
+                                               <div id="content2"><div id='fgmv2020' class='chart'”></div></div>
+                                         </div>
+                                    </div>
+                                    
+                                    
+                              </div>
+                            </div>
+                          </div>
+                          
+                        <div class="card">
+                          <div class="card-header" id="headingFive">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                2021
+                              </button>
+                            </h5>
+                          </div>
+                          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion" style="background-color: #222b35">
+                            <div class="card-body">
+                            
+                                <div id="main-wrap">
+                                    <div id="gauche">
+                                       <div><div id='fgs2021' class='chart'”></div></div>
+                                    </div>
+                                    <div id="droite">
+                                           <div id="content1"><div id='fgmr2021' class='chart'”></div></div>
+                                           <div id="content2"><div id='fgmv2021' class='chart'”></div></div>
+                                     </div>
+                                </div>
+                                    
+                                    
+                                    
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph4c">
+                        Analyse
+                        </a>
+                        <div id="graph4c" class="collapse">
+                            <p>{{interpretation_evol_mens}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                <div id="b">
+                    <h1  class="font-weight-light col"  id="graph5">{{titre_comparaison}}</h1>
+                    <p class="font-weight-light col">{{description_comparaison}}</p>
+                    <div id='comparaison' class='chart'”></div>
+                    <div>
+                        <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph5c">
+                        Analyse
+                        </a>
+                        <div id="graph5c" class="collapse">
+                            <p>{{interpretation_comparaison}}</p>
+                        </div>
+                    </div>
+                </div>
+                 
+                
+                <div id="b">
+                    <h1  class="font-weight-light col"  id="graph6">{{titre_comparaison_annee_rome}}</h1>
+                    <p class="font-weight-light col">{{description_comparaison_annee_rome}}</p>
+                    <div id='comparaison_annee_rome' class='chart'”></div>
+                    <h1  class="font-weight-light col"  id="graph7">{{titre_comparaison_annee_venise}}</h1>
+                    <p class="font-weight-light col">{{description_comparaison_annee_venise}}</p>
+                    <div id='comparaison_annee_venise' class='chart'”></div>
+                    <div>
+                        <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph67">
+                        Analyse
+                        </a>
+                        <div id="graph67" class="collapse">
+                            <p>{{interpretation_comparaison_annee_rome_venise}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+                <script type='text/javascript'>
+                  var graph5 = {{graph_comparaison  | safe}};
+                  Plotly.plot('comparaison',graph5,{});
+                  var graph6 = {{graph_comparaison_annee_rome  | safe}};
+                  Plotly.plot('comparaison_annee_rome',graph6,{});
+                  var graph7 = {{graph_comparaison_annee_venise  | safe}};
+                  Plotly.plot('comparaison_annee_venise',graph7,{});
+                  var fgs12017 = {{fgs2017  | safe}};
+                  Plotly.plot('fgs2017',fgs12017,{});
+                  var fgmr12017 = {{fgmr2017  | safe}};
+                  Plotly.plot('fgmr2017',fgmr12017,{});
+                  var fgmv12017 = {{fgmv2017  | safe}};
+                  Plotly.plot('fgmv2017',fgmv12017,{});
+    
+                  var fgs12018 = {{fgs2018  | safe}};
+                  Plotly.plot('fgs2018',fgs12018,{});
+                  var fgmr12018 = {{fgmr2018  | safe}};
+                  Plotly.plot('fgmr2018',fgmr12018,{});
+                  var fgmv12018 = {{fgmv2018  | safe}};
+                  Plotly.plot('fgmv2018',fgmv12018,{});
+    
+                  var fgs12019 = {{fgs2019  | safe}};
+                  Plotly.plot('fgs2019',fgs12019,{});
+                  var fgmr12019 = {{fgmr2019  | safe}};
+                  Plotly.plot('fgmr2019',fgmr12019,{});
+                  var fgmv12019 = {{fgmv2019  | safe}};
+                  Plotly.plot('fgmv2019',fgmv12019,{});
+    
+                  var fgs12020 = {{fgs2020  | safe}};
+                  Plotly.plot('fgs2020',fgs12020,{});
+                  var fgmr12020 = {{fgmr2020  | safe}};
+                  Plotly.plot('fgmr2020',fgmr12020,{});
+                  var fgmv12020 = {{fgmv2020  | safe}};
+                  Plotly.plot('fgmv2020',fgmv12020,{});
+    
+                  var fgs12021 = {{fgs2021  | safe}};
+                  Plotly.plot('fgs2021',fgs12021,{});
+                  var fgmr12021 = {{fgmr2021  | safe}};
+                  Plotly.plot('fgmr2021',fgmr12021,{});
+                  var fgmv12021 = {{fgmv2021  | safe}};
+                  Plotly.plot('fgmv2021',fgmv12021,{});
+                </script>
+                
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+        
+   
+    
+    
+    

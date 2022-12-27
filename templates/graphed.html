@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <h2>Description</h2>
+        <div">
+        <p class="pres">
+        {{description_page_description}}
+        </p>
+        </p>
+        <p>Sommaire :</p>
+        <ul style="list-style:none; margin-left:0; padding-left:0;">
+            <li><a href="#graph1" style="color=#000000;">{{titre_nb_vis_site}}</a></li>
+            <li><a href="#graph2">{{titre_nb_vis_monu}}</a></li>
+            <li><a href="#graph3">{{titre_lien_venise_rome}}</a></li>
+        </ul>
+    </div>
+    {% endblock %}
+    	
+    {% block graph %}
+    <div class="container h-100" id="f" >
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center box ">
+              
+                <div id="b">
+                    <h1 class="font-weight-light col"  id="graph1">{{titre_nb_vis_site}}</h1>
+                    <p class="font-weight-light col">{{description_nb_vis_site}}</p>
+                    <div id='nb_vis_site' class='chart'”></div>
+                    <div>
+                        <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph1c">
+                        description
+                        </a>
+                        <div id="graph1c" class="collapse">
+                            <p>{{interpretation_nb_vis_site}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div id="b">
+                    <h1  class="font-weight-light col"  id="graph2">{{titre_nb_vis_monu}}</h1>
+                    <p class="font-weight-light col">{{description_nb_vis_monu}}</p>
+                    <div id='nb_vis_monu' class='chart'”></div>
+                    <div>
+                        <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph2c">
+                        description
+                        </a>
+                        <div id="graph2c" class="collapse">
+                            <p>{{interpretation_nb_vis_monu}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div id="b">
+                    <h1  class="font-weight-light col"  id="graph3">{{titre_lien_venise_rome}}</h1>
+                    <p class="font-weight-light col">{{description_lien_venise_rome}}</p>
+                    <div id='lien_venise_rome' class='chart'”></div>
+                    <div>
+                        <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph3c">
+                        Analyse
+                        </a>
+                        <div id="graph3c" class="collapse">
+                            <p>{{interpretation_lien_venise_rome}}</p>
+                        </div>
+                    </div>
+                </div>     
+                
+                
+                <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+                <script type='text/javascript'>
+                  var graph1 = {{graph_nb_vis_site  | safe}};
+                  Plotly.plot('nb_vis_site',graph1,{});
+                  var graph2 = {{graph_nb_vis_monu  | safe}};
+                  Plotly.plot('nb_vis_monu',graph2,{});
+                  var graph3 = {{graph_lien_venise_rome  | safe}};
+                  Plotly.plot('lien_venise_rome',graph3,{});
+                </script>
+                
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+        
+   
+    
+    
+    

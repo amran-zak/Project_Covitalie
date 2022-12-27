@@ -1,0 +1,131 @@
+<!-- page des graphiques de prevision -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <h2>Prevision et simulation </h2>
+        <p class="pres">
+        {{description_page_prevision}}
+        </p>
+        <p>Sommaire :</p>
+        <ul style="list-style:none; margin-left:0; padding-left:0;">
+            <li><a href="#graph8">{{titre_prediction_venise}}</a></li>
+            <li><a href="#graph9">{{titre_prediction_rome}}</a></li>
+            <li><a href="#graph10">{{titre_prediction_rome_26}}</a></li>
+            <li><a href="#graph11">{{titre_prediction_venise_26}}</a></li>
+            <li><a href="#graph12">{{titre_evol_totale}}</a></li>
+        </ul>
+    </div>
+    {% endblock %}
+    	
+    {% block graph %}
+    <div class="container h-100" id="f" >
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center box ">
+              
+                
+                
+                <div id="b">
+                    <h1  class="font-weight-light col"  id="graph8">{{titre_prediction_venise}}</h1>
+                    <p class="font-weight-light col">{{description_prediction_venise}}</p>
+                    <div id='prediction_venise' class='chart'”></div>
+                    <div>
+                        <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph8c">
+                        Analyse
+                        </a>
+                        <div id="graph8c" class="collapse">
+                            <p>{{interpretation_prediction_venise}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div id="b">
+                    <h1  class="font-weight-light col"  id="graph9">{{titre_prediction_rome}}</h1>
+                    <p class="font-weight-light col">{{description_prediction_rome}}</p>
+                    <div id='prediction_rome' class='chart'”></div>
+                    <div>
+                        <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph9c">
+                        Analyse
+                        </a>
+                        <div id="graph9c" class="collapse">
+                            <p>{{interpretation_prediction_rome}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="b">
+                    <h2> Conclusion de la prédiction </h2>
+                    <div>{{conclusion_preduction_rome_venise}}</div>
+                </div>
+                
+                <div id="b">
+                    <h1  class="font-weight-light col"  id="graph10">{{titre_prediction_rome_26}}</h1>
+                    <p class="font-weight-light col">{{description_prediction_rome_26}}</p>
+                    <div id='prediction_rome_26' class='chart'”></div>
+                </div>
+                
+                <div id="b">
+                    <h1  class="font-weight-light col"  id="graph11">{{titre_prediction_venise_26}}</h1>
+                    <p class="font-weight-light col">{{description_prediction_venise_26}}</p>
+                    <div id='prediction_venise_26' class='chart'”></div>
+                </div>
+                
+                
+                 <div id="b">
+                    <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph11c">
+                            Analyse
+                    </a>
+                    <div id="graph11c" class="collapse">
+                        <p>{{interpretation_prediction_venise_rome_26}}</p>
+                    </div>
+                    
+                    <div>
+                        <h2> Conclusion de la simulation </h2>
+                        {{conclusion_prediction_venise_rome_26}}
+                    </div>
+                </div>
+                
+                <div id="b">
+                    <h1  class="font-weight-light col"  id="graph12">{{titre_evol_totale}}</h1>
+                    <p class="font-weight-light col">{{description_evol_totale}}</p>
+                    <div id='prediction_evol_totale' class='chart'”></div>
+                    <div>
+                        <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph12c">
+                        Analyse
+                        </a>
+                        <div id="graph12c" class="collapse">
+                            <p>{{interpretation_evol_totale}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+                <script type='text/javascript'>
+                  var graph8 = {{ graph_prediction_venise | safe}};
+                  Plotly.plot('prediction_venise',graph8,{});
+                  var graph9 = {{ graph_prediction_rome | safe}};
+                  Plotly.plot('prediction_rome',graph9,{});
+                  var graph10 = {{ graph_prediction_rome_2026 | safe}};
+                  Plotly.plot('prediction_rome_26',graph10,{});
+                  var graph11 = {{ graph_prediction_venise_2026 | safe}};
+                  Plotly.plot('prediction_venise_26',graph11,{});
+                  var graph12 = {{ graphe_evol_totale | safe}};
+                  Plotly.plot('prediction_evol_totale',graph12,{});
+                </script>
+                
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+        
+   
+    
+    
+    

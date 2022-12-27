@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+
+
+	{% block content %}
+	</br></br>
+	<h2 class="test"> Titre de cette page </h2>
+	</br></br>
+	<p>C'est la recherche intégrée de Windows qui vous permet de trouver 
+	</br>un fichier en tapant son nom. Il est impossible à supprimer car le processus fonctionne avec </br>
+	l'assistante Cortana. Le seul moyen d'y arriver est de désactiver le service d'indexation Windows.</p>
+	 <h2>♥</h2>
+	 <p>dans cette page on a :</p>
+	 <ul style="list-style:none; margin-left:0; padding-left:0;">
+      <li><a href="#graph1" style="color=#000000;">Graphe 1</a></li>
+      <li><a href="#graph2">Graphe 2</a></li>
+      <li><a href="#graph3">Graphe 3</a></li>
+      <li><a href="#graph4">Graphe 4</a></li>
+      <li><a href="#ancre">Graphe 5 "ancre"</a></li>
+    </ul>
+	{% endblock %}
+	
+    {% block graph %}
+    <div class="fond">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-center box">
+    
+            <h1 class="font-weight-light col"  id="graph1">Graphique 1</h1>
+            <p class="font-weight-light col">Ici, je vous invite à regarder attentivement les valeurs données à mes différents attributs</p>
+            <div id='charta' class='chart'”></div>
+            </br></br>
+            <div>
+                <a class="btn btn-link" href="#" data-toggle="collapse" data-target="#graph1">
+                    description
+                </a>
+                <div id="graph1" class="collapse">
+                   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ...
+                </div>
+            </div>
+            
+            <h1 id="graph2">Graphe 2 </h1>
+            <p class="font-weight-light col">{{b}}</p>
+            
+            <h1 id="graph3">Graphe 3 </h1>
+            <h1>Hello Plotly (but not Dash)</h1>
+             <div id='chart' class='chart'”></div>
+             <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+            <script type='text/javascript'>
+              var graphs = {{graphJSON  | safe}};
+              Plotly.plot('chart',graphs,{});
+              var graphsa = {{a  | safe}};
+              Plotly.plot('charta',graphsa,{});
+            </script>
+            
+            <div id="graph4">
+                <h1> Graphique 4 </h1> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    
+   
+    
+    
+    
+</html>
+    
