@@ -83,13 +83,8 @@ colors = {
 app = Flask(__name__)
 
 #premiere page : racine
-@app.route('/')
-def index():
-    return render_template("acces.html")
-
-
 #page d'accueil
-@app.route('/accueil/')
+@app.route('/')
 def accueil():
     description = """
         Bienvenue !
@@ -102,19 +97,9 @@ def accueil():
 
 #page a propos
 @app.route('/about/')
-def about():
-    description = """
-        voici le site de Covi-Italie, 
-        il vous permettra de visualiser de nombreux graphiques decrivant l'impact du covid19 sur le tourisme italien.
-        Ce site a été créé dans le cadre du Matser Informatique.
-        5 élèves y ont contribué. 
-        Ils ont eux-mêmes récolté, nettoyés, mis en forme les données et ont créé cette interface pour visualiser ces données. 
-    
-        """
-    
+def about(): 
     #retour de la fonction 
-    return render_template('about.html',
-                           description = description)
+    return render_template('about.html')
 
 #page de graphiques 1 : description
 @app.route('/desc/')
