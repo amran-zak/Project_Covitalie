@@ -20,11 +20,11 @@
 ![image](https://user-images.githubusercontent.com/80887236/209803715-018d1519-40d9-4cc6-8303-379e0a9eb5f8.png)
 
 
+![image](https://user-images.githubusercontent.com/80887236/209805090-0419994d-d43a-4ce6-a50c-5b12467ea3cf.png)
 
 ![image](https://user-images.githubusercontent.com/80887236/209804746-7f859b31-83d1-467f-9efa-54ca28d2b6f0.png)
 
 
-![image](https://user-images.githubusercontent.com/80887236/209805090-0419994d-d43a-4ce6-a50c-5b12467ea3cf.png)
 ### Analyse : 
 ###### On constate tout d’abord qu'avant le covid le nombre de touristes est plus élevé que pendant le covid au niveau de tous les monuments. Ensuite, les chiffres nous montrent que pendant le covid, le Colisée et la fontaine de Trevi enregistrent le plus grand nombre de visites soient respectivement 2942 et 2749. Le graphique nous montre donc que le covid a un impact sur le tourisme à Rome et Venise.
 
