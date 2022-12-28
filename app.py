@@ -134,10 +134,10 @@ def graphd():
 #         print ("Erreur lors de la connexion à PostgreSQL", error)
 # =============================================================================
 
-    res =pd.read_csv("Nb_visites_tot-monuments.csv", sep=";")
+    res =pd.read_csv("data/Nb_visites_tot-monuments.csv", sep=";")
     res = np.array(res)
     
-    res5 =pd.read_csv("liens_Venise_Rome.csv", sep=";")
+    res5 =pd.read_csv("data/liens_Venise_Rome.csv", sep=";")
     res5 = np.array(res5)
     
     #graphique nb_vis_site
@@ -307,13 +307,13 @@ def graphf():
 # =============================================================================
 
 
-    res6 = pd.read_csv("avantVSpendant.csv", sep=";")
+    res6 = pd.read_csv("data/avantVSpendant.csv", sep=";")
     res6 = np.array(res6)
     
-    res7 =pd.read_csv("EvolutionMois-label__rome_cum.csv", sep=";")
+    res7 =pd.read_csv("data/EvolutionMois-label__rome_cum.csv", sep=";")
     res7 = np.array(res7)
    
-    res8 =pd.read_csv("EvolutionMois-label__venise_cum.csv", sep=";")
+    res8 =pd.read_csv("data/EvolutionMois-label__venise_cum.csv", sep=";")
     res8 = np.array(res8)
     
     
@@ -519,49 +519,65 @@ def graphp():
     
     #connection a la base de donnees
     #recuperations des donnees utiles a l'affichage des graphiques d ela page
-    try:
-        conn = psycopg2.connect(
-              user = "m101",
-              password = "1999",
-              host = "db-etu.univ-lyon2.fr",
-              port = "5432",
-              database = "m101"
-        )
-        
-        cur9 = conn.cursor()
-        sql9 = "select * from AnalysePred_Rome_cum"
-        cur10 = conn.cursor()
-        sql10 = "select * from AnalysePred_Venise_cum"
-        cur14 = conn.cursor()
-        sql14 = "select * from PredictionRome_2017_2026"
-        cur15 = conn.cursor()
-        sql15 = "select * from PredictionVenise_2017_2026"
-        cur16 = conn.cursor()
-        sql16 = "select * from DonneesFinales"
+# =============================================================================
+#     try:
+#         conn = psycopg2.connect(
+#               user = "m101",
+#               password = "1999",
+#               host = "db-etu.univ-lyon2.fr",
+#               port = "5432",
+#               database = "m101"
+#         )
+#         
+#         cur9 = conn.cursor()
+#         sql9 = "select * from AnalysePred_Rome_cum"
+#         cur10 = conn.cursor()
+#         sql10 = "select * from AnalysePred_Venise_cum"
+#         cur14 = conn.cursor()
+#         sql14 = "select * from PredictionRome_2017_2026"
+#         cur15 = conn.cursor()
+#         sql15 = "select * from PredictionVenise_2017_2026"
+#         cur16 = conn.cursor()
+#         sql16 = "select * from DonneesFinales"
+# 
+#         cur9.execute(sql9)
+#         cur10.execute(sql10)
+#         cur14.execute(sql14)
+#         cur15.execute(sql15)
+#         cur16.execute(sql16)
+#         
+#         res9 = cur9.fetchall() 
+#         res10 = cur10.fetchall()
+#         res14 = cur14.fetchall() 
+#         res15 = cur15.fetchall()
+#         res16 = cur16.fetchall()
+#         
+#         cur9.close()
+#         cur10.close()
+#         cur14.close()
+#         cur15.close()
+#         cur16.close()
+#         conn.close()
+#     except (Exception, psycopg2.Error) as error :
+#         print ("Erreur lors de la connexion à PostgreSQL", error)
+# =============================================================================
 
-        cur9.execute(sql9)
-        cur10.execute(sql10)
-        cur14.execute(sql14)
-        cur15.execute(sql15)
-        cur16.execute(sql16)
-        
-        res9 = cur9.fetchall() 
-        res10 = cur10.fetchall()
-        res14 = cur14.fetchall() 
-        res15 = cur15.fetchall()
-        res16 = cur16.fetchall()
-        
-        cur9.close()
-        cur10.close()
-        cur14.close()
-        cur15.close()
-        cur16.close()
-        conn.close()
-    except (Exception, psycopg2.Error) as error :
-        print ("Erreur lors de la connexion à PostgreSQL", error)
 
-
-   
+    res9 =pd.read_csv("data/AnalysePred_Rome__cum.csv", sep=";")
+    res9 = np.array(res9)
+    
+    res10 =pd.read_csv("data/AnalysePred_Venise__cum.csv", sep=";")
+    res10 = np.array(res10)
+    
+    res14 =pd.read_csv("data/AnalysePred_Rome_Prevision.csv", sep=";")
+    res14 = np.array(res14)
+    
+    res15 =pd.read_csv("data/AnalysePred_Venise_Prevision.csv", sep=";")
+    res15 = np.array(res15)
+    
+    res15 =pd.read_csv("data/AnalysePred_Venise_Prevision.csv", sep=";")
+    res15 = np.array(res15)
+    
     #graphique prediction_venise
     valeurs_v = []
     trim_v = []
@@ -867,13 +883,13 @@ def testC(year_slctd):
 # =============================================================================
         
     
-    res11 =pd.read_csv("EvolutionMois-label__rome_cum.csv", sep=";")
+    res11 =pd.read_csv("data/EvolutionMois-label__rome_cum.csv", sep=";")
     res11 = np.array(res11)
    
-    res12 =pd.read_csv("EvolutionMois-label__venise_cum.csv", sep=";")
+    res12 =pd.read_csv("data/EvolutionMois-label__venise_cum.csv", sep=";")
     res12 = np.array(res12)
     
-    res13 =pd.read_csv("EvolutionMois-label__cum.csv", sep=";")
+    res13 =pd.read_csv("data/EvolutionMois-label__cum.csv", sep=";")
     res13 = np.array(res13)
     
     #recuperer les donnees de EvolutionMois_label__rome_cum
@@ -1039,7 +1055,7 @@ def testC(year_slctd):
 @app.route('/graph/')
 def graph():
 
-    df =pd.read_csv("Nb_visites_tot-monuments.csv", sep=";")
+    df =pd.read_csv("data/Nb_visites_tot-monuments.csv", sep=";")
     df = np.array(df)
     valeurs = []
     monuments = []
