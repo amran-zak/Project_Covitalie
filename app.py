@@ -273,38 +273,48 @@ def graphf():
     
     #connection a la base de donnees
     #recuperations des donnees utiles a l'affichage des graphiques d ela page
-    try:
-        conn = psycopg2.connect(
-              user = "m101",
-              password = "1999",
-              host = "db-etu.univ-lyon2.fr",
-              port = "5432",
-              database = "m101"
-        )
-        
-        cur6 = conn.cursor()
-        sql6 = "select * from avantVSpendant"
-        cur7 = conn.cursor()
-        sql7 = "select * from evolutionmoisromecume"
-        cur8 = conn.cursor()
-        sql8 = "select * from evolutionmoisvenisecume"
+# =============================================================================
+#     try:
+#         conn = psycopg2.connect(
+#               user = "m101",
+#               password = "1999",
+#               host = "db-etu.univ-lyon2.fr",
+#               port = "5432",
+#               database = "m101"
+#         )
+#         
+#         cur6 = conn.cursor()
+#         sql6 = "select * from avantVSpendant"
+#         cur7 = conn.cursor()
+#         sql7 = "select * from evolutionmoisromecume"
+#         cur8 = conn.cursor()
+#         sql8 = "select * from evolutionmoisvenisecume"
+# 
+#         cur6.execute(sql6)
+#         cur7.execute(sql7)
+#         cur8.execute(sql8)
+#         
+#         res6 = cur6.fetchall()
+#         res7 = cur7.fetchall() 
+#         res8 = cur8.fetchall()
+#         
+#         cur6.close()
+#         cur7.close()
+#         cur8.close()
+#         conn.close()
+#     except (Exception, psycopg2.Error) as error :
+#         print ("Erreur lors de la connexion à PostgreSQL", error)
+# =============================================================================
 
-        cur6.execute(sql6)
-        cur7.execute(sql7)
-        cur8.execute(sql8)
-        
-        res6 = cur6.fetchall()
-        res7 = cur7.fetchall() 
-        res8 = cur8.fetchall()
-        
-        cur6.close()
-        cur7.close()
-        cur8.close()
-        conn.close()
-    except (Exception, psycopg2.Error) as error :
-        print ("Erreur lors de la connexion à PostgreSQL", error)
 
-
+    res6 = pd.read_csv("avantVSpendant.csv", sep=";")
+    res6 = np.array(res6)
+    
+    res7 =pd.read_csv("EvolutionMois-label__rome_cum.csv", sep=";")
+    res7 = np.array(res7)
+   
+    res8 =pd.read_csv("EvolutionMois-label__venise_cum.csv", sep=";")
+    res8 = np.array(res8)
     
     
     #graphique comparaisons
@@ -823,38 +833,48 @@ def testC(year_slctd):
     
     #connection a la base de donnees
     #recuperations des donnees utiles a l'affichage des graphiques de la page
-    try:
-        conn = psycopg2.connect(
-              user = "m101",
-              password = "1999",
-              host = "db-etu.univ-lyon2.fr",
-              port = "5432",
-              database = "m101"
-        )
-        
-        cur11 = conn.cursor()
-        sql11 = "select * from EvolutionMois_label__rome_cum"
-        cur12 = conn.cursor()
-        sql12 = "select * from EvolutionMois_label__venise_cum"
-        cur13 = conn.cursor()
-        sql13 = "select * from EvolutionMois_label__cum"
-
-        cur11.execute(sql11)
-        cur12.execute(sql12)
-        cur13.execute(sql13)
-        
-        res11 = cur11.fetchall() 
-        res12 = cur12.fetchall()
-        res13 = cur13.fetchall()
-        
-        cur11.close()
-        cur12.close()
-        cur13.close()
-        conn.close()
-    except (Exception, psycopg2.Error) as error :
-        print ("Erreur lors de la connexion à PostgreSQL", error)
+# =============================================================================
+#     try:
+#         conn = psycopg2.connect(
+#               user = "m101",
+#               password = "1999",
+#               host = "db-etu.univ-lyon2.fr",
+#               port = "5432",
+#               database = "m101"
+#         )
+#         
+#         cur11 = conn.cursor()
+#         sql11 = "select * from EvolutionMois_label__rome_cum"
+#         cur12 = conn.cursor()
+#         sql12 = "select * from EvolutionMois_label__venise_cum"
+#         cur13 = conn.cursor()
+#         sql13 = "select * from EvolutionMois_label__cum"
+# 
+#         cur11.execute(sql11)
+#         cur12.execute(sql12)
+#         cur13.execute(sql13)
+#         
+#         res11 = cur11.fetchall() 
+#         res12 = cur12.fetchall()
+#         res13 = cur13.fetchall()
+#         
+#         cur11.close()
+#         cur12.close()
+#         cur13.close()
+#         conn.close()
+#     except (Exception, psycopg2.Error) as error :
+#         print ("Erreur lors de la connexion à PostgreSQL", error)
+# =============================================================================
         
     
+    res11 =pd.read_csv("EvolutionMois-label__rome_cum.csv", sep=";")
+    res11 = np.array(res11)
+   
+    res12 =pd.read_csv("EvolutionMois-label__venise_cum.csv", sep=";")
+    res12 = np.array(res12)
+    
+    res13 =pd.read_csv("EvolutionMois-label__cum.csv", sep=";")
+    res13 = np.array(res13)
     
     #recuperer les donnees de EvolutionMois_label__rome_cum
     site_r_cum = []
