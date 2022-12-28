@@ -48,8 +48,6 @@ Protego==0.1.16
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 PyDispatcher==2.0.5
-pywin32==228
-pywin32-ctypes==0.2.0
 pywinpty==0.5.7
 PyYAML==5.4.1
 queuelib==1.6.2
