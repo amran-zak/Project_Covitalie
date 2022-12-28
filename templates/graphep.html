@@ -4,17 +4,18 @@
 
 {% block content %}
     <div>
+        <br/><br/><br/><br/>
         <h2>Prevision et simulation </h2>
         <p class="pres">
         {{description_page_prevision}}
         </p>
         <p>Sommaire :</p>
         <ul style="list-style:none; margin-left:0; padding-left:0;">
-            <li><a href="#graph8">{{titre_prediction_venise}}</a></li>
-            <li><a href="#graph9">{{titre_prediction_rome}}</a></li>
-            <li><a href="#graph10">{{titre_prediction_rome_26}}</a></li>
-            <li><a href="#graph11">{{titre_prediction_venise_26}}</a></li>
-            <li><a href="#graph12">{{titre_evol_totale}}</a></li>
+            <li>✅ <a href="#graph8">{{titre_prediction_venise}}</a></li>
+            <li>✅ <a href="#graph9">{{titre_prediction_rome}}</a></li>
+            <li>✅ <a href="#graph10">{{titre_prediction_rome_26}}</a></li>
+            <li>✅ <a href="#graph11">{{titre_prediction_venise_26}}</a></li>
+            <li>✅ <a href="#graph12">{{titre_evol_totale}}</a></li>
         </ul>
     </div>
     {% endblock %}
@@ -28,6 +29,7 @@
                 
                 <div id="b">
                     <h1  class="font-weight-light col"  id="graph8">{{titre_prediction_venise}}</h1>
+                    
                     <p class="font-weight-light col">{{description_prediction_venise}}</p>
                     <div id='prediction_venise' class='chart'”></div>
                     <div>
@@ -96,7 +98,7 @@
                         Analyse
                         </a>
                         <div id="graph12c" class="collapse">
-                            <p>{{interpretation_evol_totale}}</p>
+                            <!-- <p>{{interpretation_evol_totale}}</p> -->
                         </div>
                     </div>
                 </div>
@@ -107,16 +109,21 @@
                 
                 <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
                 <script type='text/javascript'>
+                      
                   var graph8 = {{ graph_prediction_venise | safe}};
                   Plotly.plot('prediction_venise',graph8,{});
+                  console.log("graph_prediction_venise")
+                    console.log(graph8);  
                   var graph9 = {{ graph_prediction_rome | safe}};
                   Plotly.plot('prediction_rome',graph9,{});
+
                   var graph10 = {{ graph_prediction_rome_2026 | safe}};
                   Plotly.plot('prediction_rome_26',graph10,{});
                   var graph11 = {{ graph_prediction_venise_2026 | safe}};
                   Plotly.plot('prediction_venise_26',graph11,{});
-                  var graph12 = {{ graphe_evol_totale | safe}};
-                  Plotly.plot('prediction_evol_totale',graph12,{});
+
+                //   var graph12 = {{ graphe_evol_totale | safe}};
+                //   Plotly.plot('prediction_evol_totale',graph12,{});
                 </script>
                 
             </div>

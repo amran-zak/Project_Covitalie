@@ -575,8 +575,8 @@ def graphp():
     res15 =pd.read_csv("data/AnalysePred_Venise_Prevision.csv", sep=";")
     res15 = np.array(res15)
     
-    res15 =pd.read_csv("data/AnalysePred_Venise_Prevision.csv", sep=";")
-    res15 = np.array(res15)
+    # res15 =pd.read_csv("data/AnalysePred_Venise_Prevision.csv", sep=";")
+    # res15 = np.array(res15)
     
     #graphique prediction_venise
     valeurs_v = []
@@ -768,41 +768,41 @@ def graphp():
     valeurs_totale = []
     annee_totale = []
     label_total = []
-    for i in range(0, len(res16)):
-        valeurs_totale.append(res16[i][0])
-        annee_totale.append(res16[i][1])
-        label_total.append(res16[i][2])
+    # for i in range(0, len(res16)):
+    #     valeurs_totale.append(res16[i][0])
+    #     annee_totale.append(res16[i][1])
+    #     label_total.append(res16[i][2])
         
     #regrouper les donnees dans un dataframe pour la construction de la figure 
-    data_totale = pd.DataFrame({
-            "year": annee_totale,
-            "count": valeurs_totale,
-            "label": label_total
-    })
+    # data_totale = pd.DataFrame({
+    #         "year": annee_totale,
+    #         "count": valeurs_totale,
+    #         "label": label_total
+    # })
     
     #construction de la figure
-    fig_evol_totale = px.line(data_totale,
-        x = "year",
-        y = "count",
-        text = "year",
-        color = "label",
-        color_discrete_map=colors_site
-        )
+    # fig_evol_totale = px.line(data_totale,
+    #     x = "year",
+    #     y = "count",
+    #     text = "year",
+    #     color = "label",
+    #     color_discrete_map=colors_site
+    #     )
          
     #modification de l'affichage
-    fig_evol_totale.update_traces(textposition="top right")
-    fig_evol_totale.update_layout(xaxis_title = 'Année', yaxis_title = 'Nombre de visites')
-    fig_evol_totale.update_layout(
-            plot_bgcolor=colors['background'],
-            paper_bgcolor=colors['background'],
-            font_color=colors['text']
-    )
+    # fig_evol_totale.update_traces(textposition="top right")
+    # fig_evol_totale.update_layout(xaxis_title = 'Année', yaxis_title = 'Nombre de visites')
+    # fig_evol_totale.update_layout(
+    #         plot_bgcolor=colors['background'],
+    #         paper_bgcolor=colors['background'],
+    #         font_color=colors['text']
+    # )
     
     #definition des variables de retour de la fonction
-    graphJSON_evol_totale = json.dumps(fig_evol_totale, cls=plotly.utils.PlotlyJSONEncoder)
-    titre_evol_totale = "Evolution des flux touristiques de 2017 à 2026"
-    description_evol_totale = "Ce graphique présente les variations des flux touristiques des 2 sites de Rome et Venise tout au long de nos années d’étude c’est-à-dire de 2017 à 2021 et présente les flux sur les années allant jusqu’en 2026."    
-    interpretation_evol_totale = "Le graphique permet de regrouper les résultats de notre analyse et de voir encore une fois que la période Covid, de 2019 à 2023 a réellement été source de baisse des flux touristiques tant pour Rome que pour Venise. A partir de 2024, année supposée de retour à la normale, on remarque une nette hausse qui s’expliquerait par la réouverture totale des frontières et par l’envie que les gens auront de voyager à nouveau librement. Les années qui suivent le nombre de visites semble toujours augmenter. On pourrait expliquer cela par le fait qu’au fil du temps les quelques personnes qui étaient encore quelque peu réticentes au fait de voyager immédiatement retrouvent peu à peu assurance ou encore que les personnes qui au sortir de la crise ne pouvaient pas en 2024 se payer ce voyage, ont pu ensuite regrouper assez d’argent."
+    # graphJSON_evol_totale = json.dumps(fig_evol_totale, cls=plotly.utils.PlotlyJSONEncoder)
+    # titre_evol_totale = "Evolution des flux touristiques de 2017 à 2026"
+    # description_evol_totale = "Ce graphique présente les variations des flux touristiques des 2 sites de Rome et Venise tout au long de nos années d’étude c’est-à-dire de 2017 à 2021 et présente les flux sur les années allant jusqu’en 2026."    
+    # interpretation_evol_totale = "Le graphique permet de regrouper les résultats de notre analyse et de voir encore une fois que la période Covid, de 2019 à 2023 a réellement été source de baisse des flux touristiques tant pour Rome que pour Venise. A partir de 2024, année supposée de retour à la normale, on remarque une nette hausse qui s’expliquerait par la réouverture totale des frontières et par l’envie que les gens auront de voyager à nouveau librement. Les années qui suivent le nombre de visites semble toujours augmenter. On pourrait expliquer cela par le fait qu’au fil du temps les quelques personnes qui étaient encore quelque peu réticentes au fait de voyager immédiatement retrouvent peu à peu assurance ou encore que les personnes qui au sortir de la crise ne pouvaient pas en 2024 se payer ce voyage, ont pu ensuite regrouper assez d’argent."
     
 
     
@@ -834,12 +834,12 @@ def graphp():
             description_prediction_venise_26 = description_prediction_venise_26,
             
             interpretation_prediction_venise_rome_26 = interpretation_prediction_venise_rome_26,
-            conclusion_prediction_venise_rome_26 = conclusion_prediction_venise_rome_26,
+            conclusion_prediction_venise_rome_26 = conclusion_prediction_venise_rome_26
             
-            graphe_evol_totale = graphJSON_evol_totale,
-            titre_evol_totale = titre_evol_totale,
-            description_evol_totale = description_evol_totale,
-            interpretation_evol_totale = interpretation_evol_totale            
+            # graphe_evol_totale = graphJSON_evol_totale,
+            # titre_evol_totale = titre_evol_totale,
+            # description_evol_totale = description_evol_totale,
+            # interpretation_evol_totale = interpretation_evol_totale            
     )
 
 
